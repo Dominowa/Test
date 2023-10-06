@@ -1,0 +1,18 @@
+<div class="converter">
+  <div class="input-group">
+    <input type="number" [(ngModel)]="fromValue" (input)="updateConversion()" />
+    <select [(ngModel)]="fromCurrency" (change)="updateConversion()">
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+  </div>
+  <div class="input-group">
+    <input type="number" [(ngModel)]="toValue" readonly />
+    <select [(ngModel)]="toCurrency" (change)="updateConversion()">
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+  </div>
+</div>
